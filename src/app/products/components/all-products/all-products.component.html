@@ -1,0 +1,13 @@
+<div class="box">
+    <div class="select" style="margin-top: 20px;">
+        <app-select [data]="categories" [select_title]="'Category'" (selectedValue)="filter($event)"> </app-select>
+    </div> 
+    <div class="row" *ngIf="!loading">
+        <div class="col" *ngFor="let product of products">
+            <app-product [data]="product" (item)="addToCart($event)">  </app-product>
+        </div>
+    </div>
+</div>
+<div *ngIf="loading" style="width: 100%; text-align: center;">
+    <app-spinner> </app-spinner>
+</div>

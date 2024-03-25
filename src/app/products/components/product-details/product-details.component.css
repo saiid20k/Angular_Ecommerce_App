@@ -1,0 +1,28 @@
+.box{
+    margin-top: 50px;
+    background-color: #EEE;
+}
+
+.box .row{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.box .row .col{
+    flex-basis: 40%;
+    padding: 30px;
+    border-radius: 3px;
+}
+
+.box .row .col img{
+    width: 230px;
+    max-width: 100%;
+}
+
+.box .row .col ul li{
+    list-style: none;
+    color: blue;
+    margin-bottom: 20px;
+}
+
+.box .row .col ul li strong{}

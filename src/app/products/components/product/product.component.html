@@ -1,0 +1,17 @@
+<div class="item">
+    <div  routerLink="details/{{ data.id }}">
+        <img src="{{ data.image }}" alt="Test">
+        <div class="body">
+            <h2> {{ data.category }} </h2>
+            <p> {{ data.description }} </p>
+        </div>
+    </div>
+    <div class="footer">
+        <button class="addToCart" *ngIf="!addBtn" (click)="addBtn = true"> Add To Cart </button>
+        <div style="display: flex; justify-content: space-between; width: 50%;" *ngIf="addBtn">
+            <input class="qty" type="number" value="1" [(ngModel)]="qty">
+            <button class="btn2" (click)="add();addBtn=false"> Add </button>
+        </div>
+        <span> ${{ data.price }} </span>
+    </div>
+</div>

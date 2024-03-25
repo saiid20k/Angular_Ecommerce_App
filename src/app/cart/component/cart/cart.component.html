@@ -1,0 +1,64 @@
+<div>
+    <div class="alert" *ngIf="success">
+        <h2> Well Done! Your Order is Suuccesfully Send. </h2>
+    </div>
+    <div class="box">
+        <div class="row">
+            <h2> Shopping Cart </h2>
+        </div>
+        <div class="row">
+            <div class="col">
+                You Have {{ cartProducts.length }} Items in Your Cart.
+            </div>
+            <div class="col">
+                <button class="clearBtn" (click)="clearCart()"> Clear Shopping Cart </button>
+            </div>
+        </div>
+        <table>
+            <tr>
+                <th> Image </th>
+                <th> Name </th>
+                <th> Price </th>
+                <th> Quantity </th>
+                <th> Total </th>
+                <th> Action </th>
+            </tr>
+            <tr *ngFor="let item of cartProducts; let index = index;">
+                <td> <img src="{{ item.item.image }}" alt="test"> </td>
+                <td> {{ item.item.title }} </td>
+                <td> ${{ item.item.price }} </td>
+                <!-- <td> {{ item.quantity }} </td> -->
+                <td>
+                    <div class="quantity_div">
+                        <button class="btn btn-dark" (click)="minusQty(index)"> - </button>
+                        <input type="number" min="1" (change)="detectChange()" [(ngModel)]="item.quantity">
+                        <button class="btn btn-dark" (click)="addQty(index)"> + </button>
+                    </div>
+                </td>
+                <td> ${{ item.item.price * item.quantity }} </td>
+                <td style="color: red;"> <button (click)="delteItem(index)" class="deleteBtn"> Delete </button> </td>
+            </tr>
+
+            <tr>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td> Total Cart: $ {{ totalCart }} </td>
+            </tr>
+
+            <tr>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td>  </td>
+                <td> <button class="order" (click)="addCart()"> Order Now </button> </td>
+            </tr>
+
+        </table>
+
+
+    </div>
+</div>

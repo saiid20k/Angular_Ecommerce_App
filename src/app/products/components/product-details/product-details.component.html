@@ -1,0 +1,25 @@
+<div class="box" *ngIf="!loading">
+    <div class="row">
+        <div class="col">
+            <img src="{{ data.image }}" alt="test">
+        </div>
+
+        
+        <div class="col">
+            <ul>
+                <li> Title: <strong> {{ data.title }} </strong> </li>
+                <li> Category: <strong> {{ data.category }} </strong> </li>
+                <li> Description: <strong> {{ data.description | slice:0:51 }}.. </strong> </li>
+                <li> Rate <strong> {{ data.rating.rate }}  </strong> </li>
+                <li> Quantity : <strong> {{ data.quantity }} </strong> </li>
+                <li> price : <strong> ${{ data.price }} </strong> </li>
+                <li> Count <strong>  </strong> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="loading" style="width: 100%; text-align: center;">
+    <app-spinner> </app-spinner>
+</div>

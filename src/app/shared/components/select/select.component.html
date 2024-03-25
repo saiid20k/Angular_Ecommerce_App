@@ -1,0 +1,6 @@
+<label> {{ select_title }} : </label>
+<br>
+<select class="category" (change)="detect_changes($event)">
+    <option value="all" selected> All </option>
+    <option value="{{ cat }}" *ngFor="let cat of data"> {{ cat }} </option>
+</select>

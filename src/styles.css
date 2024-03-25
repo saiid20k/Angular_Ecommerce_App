@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root{
+    --orange-cololr: #FFB632;
+    --blue-color: #0A58C3;
+}
+
+*{
+    margin: 0px;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small Devices */
+
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }    
+}
+
+/* Medium Devices */
+
+@media (min-width: 992px) {
+    .container{
+        width: 970px;
+    }    
+}
+
+/* Large Devices */
+
+@media (min-width: 1200px) {
+    .container{
+        width: 1170px; 
+    }   
+}
+
+/* End Global Rules */
